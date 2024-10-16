@@ -1,0 +1,26 @@
+{
+        "code_layout": {
+                "OWNER": {
+                        "length": 32,
+                        "offset": 0,
+                        "type": "address"
+                }
+        },
+        "storage_layout": {
+                "address_to_amount_funded": {
+                        "n_slots": 1,
+                        "slot": 101,
+                        "type": "HashMap[address, uint256]"
+                },
+                "funders": {
+                        "n_slots": 101,
+                        "slot": 0,
+                        "type": "DynArray[address, 100]"
+                },
+                "price_feed": {
+                        "n_slots": 1,
+                        "slot": 102,
+                        "type": "interface src/interfaces/AggregatorV3Interface.vyi"
+                }
+        }
+}

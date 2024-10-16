@@ -1,0 +1,21 @@
+[project]
+dot_env = ".env"
+
+[networks.contracts]
+price_feed = { force_deploy = false, deployer_script = "deploy_mocks.py", fixture = true }
+
+[networks.sepolia]
+url = "https://ethereum-sepolia-rpc.publicnode.com"
+chain_id = 11155111
+save_to_db = false
+
+[networks.anvil]
+url = "http://127.0.0.1:8545"
+chain_id = 31337
+save_to_db = false
+default_account_name = "anvil1"
+
+[networks.sepolia.contracts]
+price_feed = { address = "0x694AA1769357215DE4FAC081bf1f309aDC325306" }
+
+# You can view all configuration options at https://cyfrin.github.io/moccasin/all_moccasin_toml_parameters.html
