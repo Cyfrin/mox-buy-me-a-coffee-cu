@@ -10,6 +10,7 @@ This is part of the Cyfrin Updraft Vyper Course.
 - [Usage](#usage)
   - [Compile](#compile)
   - [Test](#test)
+  - [Inspect Storage Layout](#inspect-storage-layout)
 
 # Getting Started
 
@@ -47,4 +48,10 @@ mox compile
 
 ```bash
 mox test
+```
+
+## Inspect Storage Layout
+
+```bash
+mox inspect buy_me_a_coffee storage-layout
 ```
