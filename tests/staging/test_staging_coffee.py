@@ -8,11 +8,8 @@ active_network = get_active_network()
 
 SENT_VALUE = to_wei(1, "ether")
 
-if not active_network.prompt_live:
-    pytest.skip("Skipping this test file", allow_module_level=True)
-
-
-@pytest.mark.ignore_isolation
+@pytest.mark.staging
+@pytest.mark.local
 def test_can_fund_and_withdraw_live():
     coffee = deploy_coffee()
     account = active_network.get_default_account()

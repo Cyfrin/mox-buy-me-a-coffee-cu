@@ -177,3 +177,4 @@ lib/
 .password*
 .deployments*
 .deployments.db
+.DS_Store

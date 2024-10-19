@@ -14,6 +14,16 @@ url = "http://127.0.0.1:8545"
 chain_id = 31337
 save_to_db = false
 default_account_name = "anvil1"
+unsafe_password_file = "$ANVIL1_PASSWORD_FILE"
+prompt_live = false
+
+[networks.zksync-local]
+url = "http://127.0.0.1:8011"
+chain_id = 260
+save_to_db = false
+prompt_live = false
+is_zksync = true
+
 
 [networks.sepolia.contracts]
 price_feed = { address = "0x694AA1769357215DE4FAC081bf1f309aDC325306" }
