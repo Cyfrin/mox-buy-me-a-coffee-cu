@@ -5,5 +5,6 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "moccasin>=0.3.0",
+    "mamushi>=0.0.3",
+    "moccasin>=0.3.2",
 ]

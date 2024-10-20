@@ -10,7 +10,9 @@ This is part of the Cyfrin Updraft Vyper Course.
 - [Usage](#usage)
   - [Compile](#compile)
   - [Test](#test)
-  - [Inspect Storage Layout](#inspect-storage-layout)
+- [Formatting](#formatting)
+  - [Python](#python)
+  - [Vyper](#vyper)
 
 # Getting Started
 
@@ -50,8 +52,17 @@ mox compile
 mox test
 ```
 
-## Inspect Storage Layout
+# Formatting
 
-```bash
-mox inspect buy_me_a_coffee storage-layout
+## Python
+
+```
+uv run ruff check --select I --fix
+uv run ruff check . --fix
+```
+
+## Vyper 
+
+```
+uv run mamushi src
 ```

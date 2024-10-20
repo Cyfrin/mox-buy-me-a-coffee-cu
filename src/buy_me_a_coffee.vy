@@ -10,7 +10,7 @@
 
 from interfaces import AggregatorV3Interface
 
-# minimum_usd_decimals: public(constant(decimal)) = 50.0 
+# minimum_usd_decimals: public(constant(decimal)) = 50.0
 MINIMUM_USD: public(constant(uint256)) = 50 * (10**18)
 PRECISION: constant(uint256) = 1 * (10**18)
 OWNER: public(immutable(address))
@@ -18,6 +18,7 @@ OWNER: public(immutable(address))
 funders: public(DynArray[address, 100])
 address_to_amount_funded: public(HashMap[address, uint256])
 price_feed: public(AggregatorV3Interface)
+
 
 @deploy
 def __init__(price_feed: address):
