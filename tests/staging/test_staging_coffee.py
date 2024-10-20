@@ -8,13 +8,14 @@ active_network = get_active_network()
 
 SENT_VALUE = to_wei(1, "ether")
 
+
 @pytest.mark.staging
 @pytest.mark.local
 def test_can_fund_and_withdraw_live():
-    coffee = deploy_coffee()
-    account = active_network.get_default_account()
+    price_feed = active_network.manifest_contract("price_feed")
+    coffee = deploy_coffee(price_feed)
     coffee.fund(value=SENT_VALUE)
-    amount_funded = coffee.address_to_amount_funded(account.address)
+    amount_funded = coffee.address_to_amount_funded(boa.env.eoa)
     assert amount_funded == SENT_VALUE
     coffee.withdraw()
     assert boa.env.get_balance(coffee.address) == 0

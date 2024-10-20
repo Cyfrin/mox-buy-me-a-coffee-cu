@@ -1,13 +1,16 @@
 import pytest
 from script.deploy import deploy_coffee
-from moccasin.fixture_tools import request_fixtures
 from moccasin.config import get_active_network
 import boa
 from eth_utils import to_wei
+from script.deploy_mocks import deploy_feed
 
 SEND_VALUE = to_wei(1, "ether")
 
-request_fixtures([("price_feed", "eth_usd")], scope="session")
+
+@pytest.fixture(scope="session")
+def eth_usd():
+    return deploy_feed()
 
 
 @pytest.fixture(scope="session")
@@ -17,7 +20,7 @@ def account():
 
 @pytest.fixture(scope="function")
 def coffee(eth_usd):
-    return deploy_coffee()
+    return deploy_coffee(eth_usd)
 
 
 @pytest.fixture(scope="function")

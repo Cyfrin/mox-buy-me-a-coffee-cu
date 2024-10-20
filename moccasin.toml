@@ -20,7 +20,7 @@ prompt_live = false
 [networks.zksync-local]
 url = "http://127.0.0.1:8011"
 chain_id = 260
-save_to_db = false
+save_to_db = true
 prompt_live = false
 is_zksync = true
 

@@ -3,10 +3,7 @@ from moccasin.boa_tools import VyperContract
 from moccasin.config import get_active_network
 
 
-def deploy_coffee() -> VyperContract:
-    active_network = get_active_network()
-    price_feed = active_network.manifest_contract("price_feed")
-
+def deploy_coffee(price_feed: VyperContract) -> VyperContract:
     print("Using price feed:", price_feed.address)
     coffee: VyperContract = buy_me_a_coffee.deploy(price_feed.address)
 
@@ -15,4 +12,6 @@ def deploy_coffee() -> VyperContract:
 
 
 def moccasin_main() -> VyperContract:
-    return deploy_coffee()
+    active_network = get_active_network()
+    price_feed = active_network.manifest_contract("price_feed")
+    return deploy_coffee(price_feed)

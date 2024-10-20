@@ -1,7 +1,5 @@
 from eth_utils import to_wei
 import boa
-from moccasin.config import get_active_network
-import pytest
 
 SEND_VALUE = to_wei(1, "ether")
 

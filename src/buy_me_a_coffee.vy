@@ -1,11 +1,11 @@
-"""
 # pragma version 0.4.0
 # pragma enable-decimals
-# SPDX-License-Identifier: MIT
-
-# @title A sample buy-me-a-coffee contract
-# @author Patrick Collins
-# @notice This contract is for creating a sample funding contract
+"""
+@title buy_me_a_coffee
+@license MIT
+@notice A sample buy-me-a-coffee contract
+@author Patrick Collins
+@dev This contract is for creating a sample funding contract
 """
 
 from interfaces import AggregatorV3Interface
