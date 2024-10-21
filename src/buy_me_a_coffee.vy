@@ -9,6 +9,9 @@
 """
 
 from interfaces import AggregatorV3Interface
+from interfaces import ibuy_me_a_coffee
+
+implements: ibuy_me_a_coffee
 
 # minimum_usd_decimals: public(constant(decimal)) = 50.0
 MINIMUM_USD: public(constant(uint256)) = 50 * (10**18)
