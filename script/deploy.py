@@ -13,5 +13,5 @@ def deploy_coffee(price_feed: VyperContract) -> VyperContract:
 
 def moccasin_main() -> VyperContract:
     active_network = get_active_network()
-    price_feed = active_network.manifest_contract("price_feed")
+    price_feed = active_network.manifest_named("price_feed")
     return deploy_coffee(price_feed)
