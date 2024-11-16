@@ -1,7 +1,6 @@
 # pragma version ^0.4.0
-# SPDX-License-Identifier: MIT
-
 """
+@license MIT
 @title AggregatorV3Interface
 """
 

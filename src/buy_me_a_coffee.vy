@@ -1,20 +1,13 @@
+# pragma version 0.4.0
+# pragma enable-decimals
 """
-@ pragma version 0.4.0
-@ pragma enable-decimals
-@ license: MIT
-@ title A sample buy-me-a-coffee contract
-@ author You!
-@ notice This contract is for creating a sample funding contract
+@license MIT
+@title A sample buy-me-a-coffee contract
+@author You!
+@notice This contract is for creating a sample funding contract
 """
 from interfaces import AggregatorV3Interface
 import get_price_module
-
-# interface AggregatorV3Interface:
-#     def decimals() -> uint8: view
-#     def description() -> String[1000]: view
-#     def version() -> uint256: view
-#     def getRoundData(_roundId: uint80) -> (uint80, int256, uint256, uint256, uint80): view
-#     def latestRoundData() -> (uint80, int256, uint256, uint256, uint80): view
 
 # minimum_usd_decimals: public(constant(decimal)) = 50.0 
 MINIMUM_USD: public(constant(uint256)) = 50 * (10**18)
@@ -50,7 +43,8 @@ def withdraw():
     for funder: address in self.funders:
         self.address_to_amount_funded[funder] = 0
     self.funders = []
-    send(OWNER, self.balance)
+    # send(OWNER, self.balance)
+    raw_call(OWNER, b"", value = self.balance)
 
 
 @external

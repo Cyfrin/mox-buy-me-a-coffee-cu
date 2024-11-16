@@ -1,5 +1,5 @@
-# SPDX-License-Identifier: MIT
-# @version 0.4.0
+# pragma version 0.4.0
+# @license MIT
 
 DECIMALS: immutable(uint8)
 latestAnswer: public(int256)

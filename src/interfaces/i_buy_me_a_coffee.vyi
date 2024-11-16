@@ -1,4 +1,3 @@
-
 @external 
 @payable
 def fund():
