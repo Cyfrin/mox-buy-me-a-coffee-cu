@@ -20,7 +20,7 @@ def test_price_feed_set_correctly(coffee):
 
 
 def test_fund_fails_without_enough_eth(coffee):
-    with boa.reverts():
+    with boa.reverts("You need to spend more ETH!"):
         coffee.fund()
 
 

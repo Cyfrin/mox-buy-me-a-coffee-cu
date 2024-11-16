@@ -7,11 +7,9 @@ from script.deploy_mocks import deploy_feed
 
 SEND_VALUE = to_wei(1, "ether")
 
-
 @pytest.fixture(scope="session")
 def eth_usd():
     return deploy_feed()
-
 
 @pytest.fixture(scope="session")
 def account():
