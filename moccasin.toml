@@ -2,7 +2,7 @@
 dot_env = ".env"
 
 [networks.contracts]
-price_feed = { force_deploy = false, deployer_script = "deploy_mocks.py", fixture = true }
+price_feed = { force_deploy = false, deployer_script = "deploy_mocks.py" }
 
 [networks.sepolia]
 url = "$SEPOLIA_RPC_URL"
