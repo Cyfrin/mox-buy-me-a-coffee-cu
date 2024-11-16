@@ -5,9 +5,12 @@ dot_env = ".env"
 price_feed = { force_deploy = false, deployer_script = "deploy_mocks.py", fixture = true }
 
 [networks.sepolia]
-url = "https://ethereum-sepolia-rpc.publicnode.com"
+url = "$SEPOLIA_RPC_URL"
 chain_id = 11155111
 save_to_db = false
+default_account_name = "default"
+explorer_uri = "https://eth-sepolia.blockscout.com/"
+explorer_type = "blockscout"
 
 [networks.anvil]
 url = "http://127.0.0.1:8545"
