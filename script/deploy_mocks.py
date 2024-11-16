@@ -3,7 +3,7 @@ from eth_utils import to_wei
 
 
 STARTING_DECIMALS = 8
-STARTING_PRICE = to_wei(2000, "ether")
+STARTING_PRICE = int(2000e8)
 
 
 def deploy_feed():
