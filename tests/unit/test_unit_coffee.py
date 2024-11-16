@@ -50,21 +50,21 @@ def test_withdraw_from_single_funder(coffee_funded):
     assert ending_fund_me_balance == 0
     assert ending_owner_balance == starting_owner_balance + starting_fund_me_balance
 
+# Challenge! Try to implement the following test on your own!
+# def test_withdraw_from_multiple_funders(coffee_funded):
+#     number_of_funders = 10
+#     for i in range(number_of_funders):
+#         user = boa.env.generate_address(i)
+#         boa.env.set_balance(user, SEND_VALUE * 2)
+#         with boa.env.prank(user):
+#             coffee_funded.fund(value=SEND_VALUE)
+#     starting_fund_me_balance = boa.env.get_balance(coffee_funded.address)
+#     starting_owner_balance = boa.env.get_balance(coffee_funded.OWNER())
 
-def test_withdraw_from_multiple_funders(coffee_funded):
-    number_of_funders = 10
-    for i in range(number_of_funders):
-        user = boa.env.generate_address(i)
-        boa.env.set_balance(user, SEND_VALUE * 2)
-        with boa.env.prank(user):
-            coffee_funded.fund(value=SEND_VALUE)
-    starting_fund_me_balance = boa.env.get_balance(coffee_funded.address)
-    starting_owner_balance = boa.env.get_balance(coffee_funded.OWNER())
+#     with boa.env.prank(coffee_funded.OWNER()):
+#         coffee_funded.withdraw()
 
-    with boa.env.prank(coffee_funded.OWNER()):
-        coffee_funded.withdraw()
-
-    assert boa.env.get_balance(coffee_funded.address) == 0
-    assert starting_fund_me_balance + starting_owner_balance == boa.env.get_balance(
-        coffee_funded.OWNER()
-    )
+#     assert boa.env.get_balance(coffee_funded.address) == 0
+#     assert starting_fund_me_balance + starting_owner_balance == boa.env.get_balance(
+#         coffee_funded.OWNER()
+#     )
