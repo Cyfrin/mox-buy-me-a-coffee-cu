@@ -24,11 +24,12 @@ def deploy_storage():
     # First element in dyn array
     print(f"First element in dyn array: {boa.env.get_storage(fws.address, 1003)}")
     # Mapping placeholder
-    print(f"Length of the mapping: {boa.env.get_storage(fws.address, 1103)}")
+    print(f"Mapping placeholder: {boa.env.get_storage(fws.address, 1103)}")
     # First element of mapping
     slot = 1103  # Slot of mapping
     k = 0        # Key
     location = boa.eval(f"convert(keccak256(concat(convert({slot},bytes32), convert({k}, bytes32))), uint256)")
+    print(f"Location: {location}")
     print(f"Storage of element: {boa.env.get_storage(fws.address, location)}")
 
 def moccasin_main():

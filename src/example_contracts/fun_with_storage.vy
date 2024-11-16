@@ -14,7 +14,6 @@ my_map: HashMap[uint256, bool]  # Length stored at slot 1103
 NOT_IN_STORAGE: constant(uint256) = 123
 IMMUTABLE_NOT_IN_STORAGE: immutable(uint256)
 
-
 @deploy
 def __init__():
     self.favorite_number = 25
@@ -23,7 +22,6 @@ def __init__():
     self.my_dyn_array.append(333)
     self.my_map[0] = True # Where do you think this stored (check script!)
     IMMUTABLE_NOT_IN_STORAGE = 123
-
 
 @external
 def doStuff():
