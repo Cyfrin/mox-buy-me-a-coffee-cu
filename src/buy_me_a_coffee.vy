@@ -33,8 +33,10 @@ def _only_owner():
 def fund():
     usd_value_of_eth: uint256 = get_price_module._get_eth_to_usd_rate(self.price_feed, msg.value)
     assert usd_value_of_eth >= MINIMUM_USD, "You need to spend more ETH!"
+    # Only append to funders array if this is their first time funding
+    if self.address_to_amount_funded[msg.sender] == 0:
+        self.funders.append(msg.sender)
     self.address_to_amount_funded[msg.sender] += msg.value
-    self.funders.append(msg.sender)
 
 
 @external
